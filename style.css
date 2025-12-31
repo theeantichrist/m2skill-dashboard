@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(185, 21, 155);
+  font-size: 1.6rem;
+  font-family: "Dancing Script", sans-serif;
+  color: rgba(249, 249, 249, 0.9);
+}
+
+.site-header {
+  padding: 2rem;
+}
+
+.site-header h1 {
+  text-align: center;
+  font-size: 6rem;
+  line-height: 1.4;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  text-shadow: 0 0 1rem hotpink;
+}
+
+.site-main {
+  padding: 2rem;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  flex-basis: calc(50% - 1rem);
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 0.2rem solid rgb(0, 0, 0);
+  font-size: 2.4rem;
+}
+
+.card h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 2rem;
+}
+
+.card-1 {
+  background-color: rgb(185, 21, 155);
+}
