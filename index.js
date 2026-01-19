@@ -1,5 +1,5 @@
 function setFeedback(el, message, type = "ok") {
-  if (!el) return; 
+  if (!el) return;
   el.textContent = message;
   el.classList.remove("ok", "error");
   el.classList.add(type);
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const naam = naamInput.value.trim();
-
       if (naam.length < 2) {
         setFeedback(naamFeedback, "Vul een geldige naam in (minimaal 2 tekens).", "error");
         return;
@@ -26,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setFeedback(naamFeedback, `Thanks ${naam}! Opgeslagen.`, "ok");
       naamForm.reset();
     });
-  } else {
-    console.warn("Naamformulier niet gevonden: check #naamForm en #naam in je HTML.");
   }
 
   
@@ -39,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const gekozen = chillForm.querySelector('input[name="chill"]:checked');
-
       if (!gekozen) {
         setFeedback(chillFeedback, "Kies een optie.", "error");
         return;
@@ -48,16 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
       setFeedback(chillFeedback, `Gekozen: ${gekozen.value}`, "ok");
     });
 
-    
     chillForm.addEventListener("change", (e) => {
       if (e.target && e.target.name === "chill") {
         setFeedback(chillFeedback, `Aangeklikt: ${e.target.value}`, "ok");
       }
     });
-  } else {
-    console.warn("Chill formulier niet gevonden: check #chillForm in je HTML.");
   }
 
+  
+  
   
   const emailForm = document.querySelector("#emailForm");
   const emailInput = document.querySelector("#email");
@@ -68,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const email = emailInput.value.trim();
-
       if (!email.includes("@") || !email.includes(".")) {
         setFeedback(emailFeedback, "Vul een geldig emailadres in.", "error");
         return;
@@ -78,7 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
       setFeedback(emailFeedback, `Email opgeslagen: ${email}`, "ok");
       emailForm.reset();
     });
-  } else {
-    console.warn("Emailformulier niet gevonden: check #emailForm en #email in je HTML.");
+  }
+
+  const button = document.getElementById("load-pokemon");
+  const list = document.getElementById("pokemon-list");
+
+  if (button && list) {
+    button.addEventListener("click", () => {
+      fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+        .then((response) => response.json())
+        .then((data) => {
+          list.innerHTML = "";
+          data.results.forEach((pokemon) => {
+            const li = document.createElement("li");
+            li.textContent = pokemon.name;
+            list.appendChild(li);
+          });
+        })
+        .catch((error) => {
+          console.error("Fout bij laden Pokémon:", error);
+        });
+    });
   }
 });
