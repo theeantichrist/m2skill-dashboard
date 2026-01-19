@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css grid/grid.css">
+ <link rel="stylesheet" href="css grid/grid.css">
   <title>M2 Skill Dashboard</title>
 </head>
 
@@ -17,39 +17,36 @@
     <h1>M2 skill dashboard</h1>
   </header>
 
- <main class="site-main">
-  <h2 class="dashboard-title">Dashboard</h2>
+  <main class="site-main">
+    <h2 class="dashboard-title">Dashboard</h2>
 
-  <article class="dashboard">
-    <section class="card card-1">
-      <h2>62.5% truc</h2>
-      <p>Ik hoop dat de 62.5 truc erin zit.</p>
-    </section>
+    <article class="dashboard">
 
-    
-  </article>
-</main>
+      <section class="card card-1">
+        <h2>62.5% truc</h2>
+        <p>Ik hoop dat de 62.5 truc erin zit.</p>
+      </section>
 
-     <section class="card card-2">
-  <h2>Formulier</h2>
-<div id="formulier-container"></div>
-</section>
+      <!-- Card 2: Formulier -->
+      <section class="card card-2">
+        <h2>Formulier</h2>
 
-
-        <form class="form-block" action="#" method="post">
+        <form class="form-block" id="naamForm">
           <p>Geef je persoonlijke gegevens aan MIJ.</p>
 
           <label for="naam">Naam</label>
-          <input type="text" name="naam" id="naam" placeholder="Voor- en achternaam">
+          <input type="text" name="naam" id="naam" placeholder="Voor- en achternaam" autocomplete="name">
 
           <input type="submit" value="Verstuur">
         </form>
+
+        <!-- Hier zet JS feedback neer -->
+        <p class="form-feedback" id="naamFeedback" aria-live="polite"></p>
       </section>
 
       <section class="card card-3">
         <h2>Beantwoord de vraag</h2>
-
-        <form class="form-block" action="#" method="post">
+        <form class="form-block" id="chillForm">
           <p>Met wie heb ik gister gechilled?</p>
 
           <div class="radio-group">
@@ -59,29 +56,33 @@
             <input type="radio" id="juno" name="chill" value="Juno">
             <label for="juno">Juno</label>
 
-            <input type="radio" id="jayden" name="chill" value="Jayden">
+            <input type="radio" id="jose" name="chill" value="Jose">
             <label for="jose">Jose</label>
 
-            <input type="radio" id="jayden" name="chill" value="Jayden">
-            <label for="jayden">Abdennour</label>
+            <input type="radio" id="abdennour" name="chill" value="Abdennour">
+            <label for="abdennour">Abdennour</label>
           </div>
 
           <input type="submit" value="Kies">
         </form>
+
+        <p class="form-feedback" id="chillFeedback" aria-live="polite"></p>
       </section>
 
       <section class="card card-4">
         <h2>Email</h2>
-
-        <form class="form-block" action="#" method="post">
+        <form class="form-block" id="emailForm">
           <p>Vul je email in.</p>
 
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="naam@email.com">
+          <input type="email" id="email" name="email" placeholder="naam@email.com" autocomplete="email">
 
           <input type="submit" value="Submit">
         </form>
+
+        <p class="form-feedback" id="emailFeedback" aria-live="polite"></p>
       </section>
+
     </article>
   </main>
 
@@ -91,5 +92,7 @@
       <a href="mailto:41203@ma-web.nl">41203@ma-web.nl</a>
     </p>
   </footer>
+  
+  <script src="index.js"></script>
 </body>
 </html>
