@@ -16,12 +16,11 @@ body {
   font-family: "Dancing Script", sans-serif;
   color: rgba(249, 249, 249, 0.95);
 
-  /* header - main - footer onder elkaar */
   display: flex;
   flex-direction: column;
 }
 
-/* header */
+
 .site-header {
   padding: 2rem;
 }
@@ -36,7 +35,7 @@ body {
   border: 0.2rem solid black;
 }
 
-/* main */
+
 .site-main {
   flex: 1;
   padding: 2rem;
@@ -77,26 +76,14 @@ body {
 }
 
 
-.card-1 {
-  grid-column: 1 / 4;
-  grid-row: 1 / 2;
-}
+.card-1 { grid-column: 1 / 4; grid-row: 1 / 2; }  
+.card-6 { grid-column: 4 / 7; grid-row: 1 / 2; }  
 
-.card-2 {
-  grid-column: 4 / 7;
-  grid-row: 1 / 2;
-}
+.card-3 { grid-column: 1 / 4; grid-row: 2 / 3; }  
+.card-2 { grid-column: 4 / 7; grid-row: 2 / 3; }  
 
-.card-3 {
-  grid-column: 1 / 4;
-  grid-row: 2 / 3;
-}
-
-.card-4 {
-  grid-column: 4 / 7;
-  grid-row: 2 / 3;
-}
-
+.card-4 { grid-column: 1 / 4; grid-row: 3 / 4; }  
+.card-5 { grid-column: 4 / 7; grid-row: 3 / 4; } 
 
 .form-block {
   display: flex;
@@ -152,17 +139,6 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 
-.card-5 {
-  grid-column: 4 / 5;  
-  grid-row: 3 / 4;
-}
-
-.card-6 {
-  grid-column: 5 / 7;  
-  grid-row: 1 / 2;
-}
-
-
 .card-5 .time {
   font-size: 4rem;
   margin: 1rem 0 2rem;
@@ -184,6 +160,38 @@ input[type="submit"]:hover {
   background: rgba(255, 255, 255, 0.9);
   color: black;
 }
+
 .card-5 button:hover {
   transform: scale(1.02);
+}
+
+
+#load-pokemon {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  border: 0.2rem solid black;
+  font-size: 2rem;
+  font-family: inherit;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+#load-pokemon:hover {
+  transform: scale(1.02);
+}
+
+#pokemon-list {
+  list-style: none;
+  margin-top: 1.2rem;
+  padding: 0;
+  max-height: 18rem;
+  overflow: auto;
+}
+
+#pokemon-list li {
+  padding: 0.8rem 1rem;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25);
+  font-size: 2.2rem;
 }
